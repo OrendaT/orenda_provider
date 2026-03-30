@@ -1,0 +1,1 @@
+ALTER TABLE public.admin_permissions ADD COLUMN IF NOT EXISTS role text NOT NULL DEFAULT 'Provider';

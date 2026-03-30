@@ -1,0 +1,1 @@
+DELETE FROM provider_office_availability WHERE provider_name = 'Susie Levitt';

@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=DM+Sans:wght@300;400;500;600&family=Outfit:wght@200;300;400;500;600&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 270 20% 96%;
+    --foreground: 270 60% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 270 60% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 270 60% 15%;
+
+    --primary: 270 100% 25%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 270 40% 92%;
+    --secondary-foreground: 270 60% 15%;
+
+    --muted: 270 20% 94%;
+    --muted-foreground: 270 10% 50%;
+
+    --accent: 270 80% 40%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 270 20% 88%;
+    --input: 270 20% 88%;
+    --ring: 270 100% 25%;
+
+    --radius: 0.75rem;
+
+    --italic-accent: 270 60% 72%;
+
+    --gradient-card: linear-gradient(135deg, hsl(270, 100%, 20%) 0%, hsl(270, 80%, 40%) 30%, hsl(270, 60%, 60%) 60%, hsl(270, 30%, 85%) 85%, hsl(0, 0%, 100%) 100%);
+    --gradient-card-back: linear-gradient(135deg, hsl(0, 0%, 100%) 0%, hsl(270, 30%, 85%) 15%, hsl(270, 60%, 60%) 40%, hsl(270, 80%, 40%) 70%, hsl(270, 100%, 20%) 100%);
+
+    --font-display: 'Cormorant Garamond', serif;
+    --font-body: 'Montserrat', sans-serif;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 270 30% 5%;
+    --foreground: 270 10% 95%;
+    --card: 270 30% 8%;
+    --card-foreground: 270 10% 95%;
+    --popover: 270 30% 8%;
+    --popover-foreground: 270 10% 95%;
+    --primary: 270 80% 70%;
+    --primary-foreground: 270 100% 10%;
+    --secondary: 270 30% 15%;
+    --secondary-foreground: 270 10% 95%;
+    --muted: 270 20% 15%;
+    --muted-foreground: 270 10% 60%;
+    --accent: 270 60% 50%;
+    --accent-foreground: 0 0% 100%;
+    --border: 270 20% 18%;
+    --input: 270 20% 18%;
+    --ring: 270 80% 70%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+  img {
+    content-visibility: auto;
+  }
+}
+
+@layer utilities {
+  .perspective-1200 {
+    perspective: 1200px;
+  }
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+  .rotate-y-180 {
+    transform: rotateY(180deg);
+  }
+  .font-display {
+    font-family: var(--font-display);
+  }
+  .font-body {
+    font-family: var(--font-body);
+  }
+  .card-gradient {
+    background: var(--gradient-card);
+  }
+  .card-gradient-back {
+    background: var(--gradient-card-back);
+  }
+}
+
+/* PDF export mode — much larger body text for readability */
+.pdf-export-mode {
+  font-size: 28px;
+}
+.pdf-export-mode p,
+.pdf-export-mode span,
+.pdf-export-mode td,
+.pdf-export-mode li {
+  font-size: 1.3em;
+  line-height: 1.8;
+  font-weight: 500;
+}
+.pdf-export-mode .font-body {
+  font-weight: 500;
+}
+.pdf-export-mode .text-muted-foreground {
+  font-weight: 500;
+  color: hsl(270, 10%, 35%);
+}
+.pdf-export-mode .text-white\/50,
+.pdf-export-mode .text-white\/40 {
+  font-weight: 500;
+}
+.pdf-export-mode h1 {
+  font-size: 1.8em;
+  font-weight: 400;
+}
+.pdf-export-mode h2 {
+  font-size: 1.5em;
+  font-weight: 400;
+}
+.pdf-export-mode h3 {
+  font-size: 1.3em;
+  font-weight: 600;
+}
+.pdf-export-mode h4 {
+  font-size: 1.2em;
+  font-weight: 600;
+}
+.pdf-export-mode .text-xs {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+.pdf-export-mode .text-sm {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+.pdf-export-mode .text-base {
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+.pdf-export-mode .text-lg {
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+.pdf-export-mode .text-xl {
+  font-size: 1.9rem;
+}
+.pdf-export-mode .text-2xl {
+  font-size: 2.2rem;
+}
+.pdf-export-mode .text-3xl {
+  font-size: 2.6rem;
+}
+.pdf-export-mode .text-\[10px\] {
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+}
