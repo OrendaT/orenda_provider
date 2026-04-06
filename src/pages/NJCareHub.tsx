@@ -247,7 +247,7 @@ export default function NJCareHub({ isAdmin = false, providerName, onSignOut }: 
                 <p className="text-[10px] tracking-[0.3em] uppercase text-foreground/30 font-medium">NJ In-Person Care Hub</p>
               </div>
 
-              <div className="space-y-1 -mt-8">
+              <div className="space-y-1 mt-5">
                 {navItems.map((item) => (
                   <div key={item.label} className="border-b border-foreground/[0.06]">
                     {"children" in item && item.children ? (
@@ -295,7 +295,7 @@ export default function NJCareHub({ isAdmin = false, providerName, onSignOut }: 
                 ))}
               </div>
 
-              <div className="space-y-6">
+              <div className="space-y-6 mt-2">
                 <Link
                   to={`${prefix}/book`}
                   onClick={() => { setNavOpen(false); setExpandedGroup(null); }}
