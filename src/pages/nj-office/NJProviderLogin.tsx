@@ -93,7 +93,7 @@ export default function NJProviderLogin() {
           <h1 className="font-display text-2xl font-light text-foreground">
             Provider <em className="text-italic-accent" style={{ fontStyle: "italic" }}>Login</em>
           </h1>
-          <p className="text-muted-foreground text-xs mt-2">Sign in to access your portal</p>
+          <p className="text-muted-foreground text-xs mt-2"> your portal</p>
         </div>
 
         {/* Login Form */}
